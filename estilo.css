@@ -1,0 +1,43 @@
+*{
+    margin:0;
+    padding:0;
+   
+}
+
+.container{
+    position: relative;
+    top: 125px;
+}
+
+.text{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border: 0px;
+    background: #808088;
+    width: 325.8px;
+    height: 80px;
+    margin-left: 10;
+
+}
+
+.column1{
+
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border: 0px;
+    background: #1e90f1;
+    width: 80px;
+    height: 80px;
+}
+
+.column2{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border: 0px;
+    background: #00BFFF;
+    width: 80px;
+    height: 80px;
+}

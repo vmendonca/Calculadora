@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+    <title>Calculadora</title>
+    <link rel="styleSheet" type="text/css" href="estilo.css"/>
+    <script language="Javascript">
+
+            function AddChar(input,character){
+                if(input.value == null || input.value == "0"){
+                   input.value = character;     
+                }else
+                    {
+                        input.value += character;
+                    }
+                
+            }
+
+            function Delete(input){
+                if(input.value !== "0"){
+                    input.value = "0";    
+                }
+            }
+
+            function compute(form){
+                form.display.value = eval(form.display.value);
+            }   
+
+            function checkNum (str){
+                for(i=0;i< str.length;i++){
+                    var ch = str.substring(i, i+1);
+                    if(ch < "0"|| ch > "9"){
+                        if(ch != "/" && ch != "*" && ch != "-" && ch != "+" && ch != "(" && ch != ")"){
+                            alert("Valor invalido");
+                        }
+                    }
+                    
+                }
+
+                return true;
+            }
+
+
+            
+    </script>
+</head>
+<body>
+    <center>
+            <div class="container">
+                <form>
+                    <table>
+                        <tr>
+                            <td colspan="4"><input type="text" id="texto" class="text" name="display" value="0"/></td>
+                        </tr>
+                        <tr>
+                            <td><input class="column1" id="7" type="button" value="7" onclick="AddChar(this.form.display,7);"/></td>
+                            <td><input class="column1" id="8" type="button" value="8" onclick="AddChar(this.form.display,8)"/></td>
+                            <td><input class="column1" id="9" type="button" value="9" onclick="AddChar(this.form.display ,9)"/></td>
+                            <td><input class="column2" id="soma" type="button" value="+" onclick="AddChar(this.form.display ,'+')"/></td>
+                        </tr>
+
+                        <tr>
+                            <td><input class="column1" id="4" type="button" value="4" onclick="AddChar(this.form.display ,'4')"/></td>
+                            <td><input class="column1" id="5" type="button" value="5" onclick="AddChar(this.form.display ,'5')"/></td>
+                            <td><input class="column1" id="6" type="button" value="6" onclick="AddChar(this.form.display ,'6')"/></td>
+                            <td><input class="column2" id="subtrair" type="button" value="-" onclick="AddChar(this.form.display ,'-')"/></td>
+                        </tr>
+                        <tr>
+                            <td><input class="column1" id="3" type="button" value="CE" onclick="Delete(this.form.display)"/></td>
+                            <td><input class="column1" id="2" type="button" value="2" onclick="AddChar(this.form.display ,'2')"/></td>
+                            <td><input class="column1" id="1" type="button" value="1" onclick="AddChar(this.form.display ,'1')"/></td>
+                            <td><input class="column2" id="multiplicar" type="button" value="*" onclick="AddChar(this.form.display ,'*')"/></td>
+                        </tr>
+                        <tr>
+                            <td><input class="column1" id="limpar" type="button" value="3" onclick="delete(this.form.display)"/></td>
+                            <td><input class="column1" id="0" type="button" value="0" onclick="AddChar(this.form.display ,0)"/></td>
+                            <td><input class="column1" id="igual" type="button" value="=" onclick="if (checkNum(this.form.display.value)){compute(this.form)}"/></td>
+                            <td><input class="column2" id="divisao" type="button" value="/" onclick="AddChar(this.form.display ,'/')"/></td>
+                        </tr>
+
+                    </table>
+                </form>
+            </div>
+    </center>
+</body>
